@@ -18,21 +18,18 @@ def main():
                "Connection": "Keep-Alive"}
     i = 0
     data = {'q': '%E9%9E%8B', 'spm': 'a219r.lm874.1000187.2'}
-    #   print(str(x))
-    # 知乎用offset控制加载的个数，每次响应加载20
     content = requests.get(url, headers=headers, data=data, timeout=10).text
-    # 用post提交form data
-    # print(content)
     p1 = '//g-search.+?.[jp][pn]g'
     pat = re.compile(p1)
-    temp_imgs = pat.findall(content)
+    temp_imgs = pat.findall(content)  # 筛出jpg/png图片信息
     key = []
     for i in range(0, len(temp_imgs), 1):
         key.append(i)
         imgs = dict(zip(key, temp_imgs))
-        print(imgs[i])
-        url = 'https:'+ str(imgs[i])
-        print('https:'+ str(imgs[i]))
+       # print(imgs[i])
+        url = 'https:' + str(imgs[i])
+        print('https:' + str(imgs[i]))
+     #设计字典，并取出图片url
 
         for img in imgs:
             path = 'D:\\mydata\\jpg\\' + str(i) + '.jpg'
