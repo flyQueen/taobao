@@ -30,15 +30,13 @@ def main():
         url = 'https:' + str(imgs[i])
         print('https:' + str(imgs[i]))
      #设计字典，并取出图片url
-
-        for img in imgs:
-            path = 'D:\\mydata\\jpg\\' + str(i) + '.jpg'
-            # 声明存储地址及图片名称
-            urllib.request.urlretrieve(url, path)
+        path = 'D:\\mydata\\jpg\\' + str(i) + '.jpg'
+        # 声明存储地址及图片名称
+        urllib.request.urlretrieve(url, path)
             # 下载图片
-            print(u'下载了第' + str(i) + u'张图片')
-            i += 1
-            sleep(random.uniform(0.5, 1))
+        print(u'下载了第' + str(i+1) + u'张图片')
+        #i += 1
+        sleep(random.uniform(0.5, 1))
         # 睡眠函数用于防止爬取过快被封IP
 
 
